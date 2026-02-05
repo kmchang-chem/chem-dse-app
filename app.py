@@ -46,7 +46,7 @@ st.markdown(f"#### {q_row['question_text']}")
 
 # 顯示圖片 (如果有提供圖片檔名且檔案存在)
 if pd.notna(q_row['image_filename']) and q_row['image_filename'] != "":
-    img_path = os.path.join(current_dir, "images", q_row['image_filename'])
+    img_path = os.path.join(current_dir, q_row['image_filename'])
     if os.path.exists(img_path):
         st.image(img_path, use_container_width=True)
     else:
